@@ -1,11 +1,11 @@
 package br.edu.ifpb.appbuscarempregos.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
 import br.edu.ifpb.appbuscarempregos.R;
 
-public class ListarCGActivity extends AppCompatActivity {
+public class ListarCGActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
