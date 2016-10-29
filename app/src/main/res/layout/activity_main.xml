@@ -4,7 +4,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.edu.ifpb.appbuscarempregos.MainActivity">
+    tools:context="br.edu.ifpb.appbuscarempregos.activity.MainActivity">
 
     <TextView
         android:text="Listar todos os sines"

@@ -3,7 +3,7 @@ package br.edu.ifpb.appbuscarempregos.listeners;
 import android.content.Intent;
 import android.view.View;
 
-import br.edu.ifpb.appbuscarempregos.MainActivity;
+import br.edu.ifpb.appbuscarempregos.activity.MainActivity;
 import br.edu.ifpb.appbuscarempregos.activity.ListarCGActivity;
 
 /**

@@ -1,10 +1,10 @@
-package br.edu.ifpb.appbuscarempregos;
+package br.edu.ifpb.appbuscarempregos.activity;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 
+import br.edu.ifpb.appbuscarempregos.R;
 import br.edu.ifpb.appbuscarempregos.listeners.ListarBrasilOnClickListener;
 import br.edu.ifpb.appbuscarempregos.listeners.ListarCGOnClickListener;
 
