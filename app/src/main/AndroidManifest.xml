@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.ListarBrasilActivity" />
-        <activity android:name=".activity.ListarCGActivity"></activity>
+        <activity android:name=".activity.ListarCGActivity" />
+        <activity android:name=".activity.DetalharActivity"></activity>
     </application>
 
 </manifest>

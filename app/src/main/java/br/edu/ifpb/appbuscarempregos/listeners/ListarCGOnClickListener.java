@@ -13,7 +13,7 @@ import br.edu.ifpb.appbuscarempregos.activity.ListarCGActivity;
 public class ListarCGOnClickListener implements View.OnClickListener {
     private MainActivity main;
 
-    public  ListarCGOnClickListener(MainActivity main){
+    public ListarCGOnClickListener(MainActivity main) {
         this.main = main;
     }
 

@@ -13,7 +13,7 @@ import br.edu.ifpb.appbuscarempregos.activity.ListarBrasilActivity;
 public class ListarBrasilOnClickListener implements View.OnClickListener {
     private MainActivity main;
 
-    public  ListarBrasilOnClickListener(MainActivity main){
+    public ListarBrasilOnClickListener(MainActivity main) {
         this.main = main;
     }
 
