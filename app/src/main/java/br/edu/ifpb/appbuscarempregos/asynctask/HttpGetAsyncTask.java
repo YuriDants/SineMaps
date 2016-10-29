@@ -9,12 +9,15 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
+
+import br.edu.ifpb.appbuscarempregos.Sine;
 
 /**
  * Created by gabriel on 29/10/2016.
  */
 
-public class HttpGet extends AsyncTask<String, Void, List<Sine>> {
+public class HttpGetAsyncTask extends AsyncTask<String, Void, List<Sine>> {
 
     @Override
     protected void onPreExecute() {
@@ -30,7 +33,7 @@ public class HttpGet extends AsyncTask<String, Void, List<Sine>> {
 
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
-            connection.setRequestProperty("Content-Type", "application/json";
+            connection.setRequestProperty("Content-Type", "application/json");
             connection.connect();
 
             InputStream inputStream = connection.getInputStream();
@@ -47,7 +50,7 @@ public class HttpGet extends AsyncTask<String, Void, List<Sine>> {
     }
 
     public List<Sine> getSines(JsonReader jsonReader) throws IOException {
-        List<Sine> sines = new ArrayList<Sines>();
+        List<Sine> sines = new ArrayList<Sine>();
         jsonReader.beginArray();
 
         while (jsonReader.hasNext()) {
