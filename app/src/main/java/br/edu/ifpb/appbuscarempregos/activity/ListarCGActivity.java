@@ -2,9 +2,14 @@ package br.edu.ifpb.appbuscarempregos.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -13,24 +18,29 @@ import br.edu.ifpb.appbuscarempregos.R;
 import br.edu.ifpb.appbuscarempregos.Sine;
 import br.edu.ifpb.appbuscarempregos.asynctask.HttpGetAsyncTask;
 import br.edu.ifpb.appbuscarempregos.listeners.DetalharOnItemClickListener;
+import br.edu.ifpb.appbuscarempregos.listeners.PesquisarOnTextChangeListener;
 
 public class ListarCGActivity extends Activity {
-    private ArrayAdapter<Sine> adapter= null;
+    private ArrayAdapter<Sine> adapter = null;
+    private List<Sine> listaBase;
+    private ListView list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_cg);
 
-        ListView listView = (ListView) findViewById(R.id.list);
+        list = (ListView) findViewById(R.id.list);
         HttpGetAsyncTask httpGetAsyncTask = new HttpGetAsyncTask();
 
-        listView.setOnItemClickListener(new DetalharOnItemClickListener(this));
+        EditText searchText = (EditText) findViewById(R.id.SearchText);
+        searchText.addTextChangedListener(new PesquisarOnTextChangeListener(this));
+
+        list.setOnItemClickListener(new DetalharOnItemClickListener(this));
 
         try {
-            List<Sine> list = httpGetAsyncTask.execute("http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/emprego/latitude/-7.242662/longitude/-35.9716057/raio/100").get();
-            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
-            listView.setAdapter(adapter);
+            listaBase = httpGetAsyncTask.execute("http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/emprego/latitude/-7.242662/longitude/-35.9716057/raio/100").get();
+            setList(listaBase);
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
@@ -42,6 +52,23 @@ public class ListarCGActivity extends Activity {
 
     public void setAdapter(ArrayAdapter<Sine> adapter) {
         this.adapter = adapter;
+    }
+
+    public List<Sine> getListaBase() {
+        return listaBase;
+    }
+
+    public void setListaBase(List<Sine> listaBase) {
+        this.listaBase = listaBase;
+    }
+
+    public ListView getList() {
+        return list;
+    }
+
+    public void setList(List<Sine> lista) {
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lista);
+        list.setAdapter(adapter);
     }
 }
 
