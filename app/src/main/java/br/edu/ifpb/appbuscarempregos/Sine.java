@@ -1,10 +1,12 @@
 package br.edu.ifpb.appbuscarempregos;
 
+import java.io.Serializable;
+
 /**
  * Created by Henrique on 29/10/2016.
  */
 
-public class Sine {
+public class Sine implements Serializable {
     private String codPosto;
     private String nome;
     private String entidadeConveniada;
@@ -16,6 +18,8 @@ public class Sine {
     private String uf;
     private String lat;
     private String longi;
+
+    public Sine(){}
 
     public String getCodPosto() {
         return codPosto;
@@ -107,7 +111,7 @@ public class Sine {
 
     @Override
     public String toString() {
-        return nome + '\'' +
+        return nome + '\n' +
                 entidadeConveniada;
     }
 }

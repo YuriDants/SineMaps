@@ -7,6 +7,15 @@
     tools:context="br.edu.ifpb.appbuscarempregos.activity.ListarBrasilActivity"
     android:orientation="vertical">
 
+    <TextView
+        android:text="Sines do Brasil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

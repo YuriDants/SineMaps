@@ -15,7 +15,7 @@ import br.edu.ifpb.appbuscarempregos.activity.MainActivity;
 
 public class SplashActivity extends Activity implements Runnable {
 
-    private static int splashTime= 20000;
+    private static int splashTime= 2000;
     private ImageView image;
 
     protected void onCreate(Bundle savedInstanceState){

@@ -162,7 +162,7 @@
                         android:text="CEP:"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/txtCEP"
+                        android:id="@+id/t"
                         android:textSize="24sp"
                         android:textStyle="normal|bold" />
 
@@ -177,7 +177,7 @@
                         android:text="TextView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView6"
+                        android:id="@+id/txtCEP"
                         android:textSize="24sp" />
                 </TableRow>
 
@@ -292,6 +292,20 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/txtTelefone"
                         android:textSize="24sp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:text="Ver no mapa"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/mapButton"
+                        android:layout_weight="1" />
                 </TableRow>
 
             </TableLayout>

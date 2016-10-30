@@ -7,16 +7,16 @@
     tools:context="br.edu.ifpb.appbuscarempregos.activity.MainActivity">
 
     <TextView
-        android:text="Listar todos os sines"
+        android:text="Busca de emprego \n Sines"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView"
         android:textSize="24sp"
-        android:textColor="@android:color/black"
         android:textAlignment="center"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="18dp" />
+        android:layout_marginTop="18dp"
+        android:textStyle="normal|bold" />
 
     <Button
         android:text="brasil"
@@ -33,4 +33,12 @@
         android:id="@+id/bCG"
         android:layout_centerVertical="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="GPS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bCG"
+        android:layout_alignParentStart="true"
+        android:id="@+id/button" />
 </RelativeLayout>

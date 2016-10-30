@@ -15,7 +15,7 @@ import br.edu.ifpb.appbuscarempregos.asynctask.HttpGetAsyncTask;
 import br.edu.ifpb.appbuscarempregos.listeners.DetalharOnItemClickListener;
 
 public class ListarBrasilActivity extends Activity {
-
+    private ArrayAdapter<Sine> adapter = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,13 +27,20 @@ public class ListarBrasilActivity extends Activity {
         DetalharOnItemClickListener detalhar = new DetalharOnItemClickListener(this);
         listView.setOnItemClickListener(detalhar);
 
-        try{
-            ArrayAdapter<Sine> adapter = new ArrayAdapter<Sine>(this, android.R.layout.simple_list_item_1,httpGetAsyncTask.execute("http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/emprego/").get());
+        try {
+            adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, httpGetAsyncTask.execute("http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/emprego/").get());
             listView.setAdapter(adapter);
-        } catch (InterruptedException | ExecutionException e ){
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
 
+    }
 
+    public ArrayAdapter<Sine> getAdapter() {
+        return adapter;
+    }
+
+    public void setAdapter(ArrayAdapter<Sine> adapter) {
+        this.adapter = adapter;
     }
 }

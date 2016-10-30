@@ -2,6 +2,7 @@ package br.edu.ifpb.appbuscarempregos.asynctask;
 
 import android.os.AsyncTask;
 import android.util.JsonReader;
+import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,7 +27,7 @@ public class HttpGetAsyncTask extends AsyncTask<String, Void, List<Sine>> {
 
     @Override
     protected List<Sine> doInBackground(String... strings) {
-        List<Sine> sines = new ArrayList<Sine>();
+        List<Sine> sines = new ArrayList<>();
 
         try {
             URL url = new URL(strings[0]);
@@ -50,7 +51,7 @@ public class HttpGetAsyncTask extends AsyncTask<String, Void, List<Sine>> {
     }
 
     public List<Sine> getSines(JsonReader jsonReader) throws IOException {
-        List<Sine> sines = new ArrayList<Sine>();
+        List<Sine> sines = new ArrayList<>();
         jsonReader.beginArray();
 
         while (jsonReader.hasNext()) {
@@ -68,55 +69,46 @@ public class HttpGetAsyncTask extends AsyncTask<String, Void, List<Sine>> {
 
         while (jsonReader.hasNext()) {
             String obj = jsonReader.nextName();
+
             if (obj.equals("codPosto")) {
                 sine.setCodPosto(jsonReader.nextString());
+
+            } else if (obj.equals("nome")) {
+                sine.setNome(jsonReader.nextString());
+
+            } else if (obj.equals("entidadeConveniada")) {
+                sine.setEntidadeConveniada(jsonReader.nextString());
+
+            } else if (obj.equals("endereco")) {
+                sine.setEndereco(jsonReader.nextString());
+
+            } else if (obj.equals("bairro")) {
+                sine.setBairro(jsonReader.nextString());
+
+            } else if (obj.equals("cep")) {
+                sine.setCep(jsonReader.nextString());
+
+            } else if (obj.equals("telefone")) {
+                sine.setTelefone(jsonReader.nextString());
+
+            } else if (obj.equals("municipio")) {
+                sine.setMunicipio(jsonReader.nextString());
+
+            } else if (obj.equals("uf")) {
+                sine.setUf(jsonReader.nextString());
+
+            } else if (obj.equals("lat")) {
+                sine.setLat(jsonReader.nextString());
+
+            } else if (obj.equals("long")) {
+
+                sine.setLongi(jsonReader.nextString());
             } else {
-                if (obj.equals("nome")) {
-                    sine.setNome(jsonReader.nextString());
-                } else {
-                    if (obj.equals("entidadeConveniada")) {
-                        sine.setEntidadeConveniada(jsonReader.nextString());
-                    } else {
-                        if (obj.equals("endereco")) {
-                            sine.setEndereco(jsonReader.nextString());
-                        } else {
-                            if (obj.equals("bairro")) {
-                                sine.setBairro(jsonReader.nextString());
-                            } else {
-                                if (obj.equals("cep")) {
-                                    sine.setCep(jsonReader.nextString());
-                                } else {
-                                    if (obj.equals("telefone")) {
-                                        sine.setTelefone(jsonReader.nextString());
-                                    } else {
-                                        if (obj.equals("municipio")) {
-                                            sine.setMunicipio(jsonReader.nextString());
-                                        } else {
-                                            if (obj.equals("uf")) {
-                                                sine.setUf(jsonReader.nextString());
-                                            } else {
-                                                if (obj.equals("lat")) {
-                                                    sine.setLat(jsonReader.nextString());
-                                                } else {
-                                                    if (obj.equals("long")) {
-                                                        sine.setLongi(jsonReader.nextString());
-                                                    } else {
-                                                        jsonReader.skipValue();
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                jsonReader.skipValue();
             }
         }
 
         jsonReader.endObject();
-
         return sine;
     }
 
