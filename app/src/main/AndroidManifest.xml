@@ -4,6 +4,8 @@
     package="br.edu.ifpb.appbuscarempregos">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -22,6 +24,7 @@
         <activity android:name=".activity.ListarCGActivity" />
         <activity android:name=".activity.DetalharActivity" />
         <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.ListarGpsActivity"></activity>
     </application>
 
 </manifest>

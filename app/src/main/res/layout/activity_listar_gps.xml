@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_listar_cg"
+    android:id="@+id/activity_listar_gps"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.edu.ifpb.appbuscarempregos.activity.ListarCGActivity"
     android:orientation="vertical">
 
     <TextView
-        android:text="Sines no raio de 100Km"
+        android:text="Sines mais perto de você"
         android:layout_width="match_parent"
         android:layout_height="46dp"
-        android:textSize="24sp"
-        android:textStyle="normal|bold"
+        android:id="@+id/textView2"
         android:textAlignment="center"
-        android:id="@+id/textView3" />
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/list" />
+
 </LinearLayout>

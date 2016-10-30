@@ -16,6 +16,7 @@ import br.edu.ifpb.appbuscarempregos.Sine;
 import br.edu.ifpb.appbuscarempregos.activity.DetalharActivity;
 import br.edu.ifpb.appbuscarempregos.activity.ListarBrasilActivity;
 import br.edu.ifpb.appbuscarempregos.activity.ListarCGActivity;
+import br.edu.ifpb.appbuscarempregos.activity.ListarGpsActivity;
 import br.edu.ifpb.appbuscarempregos.asynctask.HttpGetAsyncTask;
 
 /**
@@ -25,6 +26,7 @@ import br.edu.ifpb.appbuscarempregos.asynctask.HttpGetAsyncTask;
 public class DetalharOnItemClickListener implements AdapterView.OnItemClickListener {
     private ListarCGActivity listarCGActivity = null;
     private ListarBrasilActivity listarBrasilActivity = null;
+    private ListarGpsActivity ListarGpsActivity = null;
 
     public DetalharOnItemClickListener(ListarCGActivity activity) {
         this.listarCGActivity = activity;
@@ -32,6 +34,10 @@ public class DetalharOnItemClickListener implements AdapterView.OnItemClickListe
 
     public DetalharOnItemClickListener(ListarBrasilActivity activity) {
         this.listarBrasilActivity = activity;
+    }
+
+    public DetalharOnItemClickListener(ListarGpsActivity activity) {
+        this.ListarGpsActivity = activity;
     }
 
     @Override
