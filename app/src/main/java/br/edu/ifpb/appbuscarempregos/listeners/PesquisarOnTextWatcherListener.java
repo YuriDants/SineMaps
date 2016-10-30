@@ -52,7 +52,7 @@ public class PesquisarOnTextWatcherListener implements TextWatcher {
                     list.add(listarBrasilActivity.getListaBase().get(j));
                 }
             }
-            listarCGActivity.setList(list);
+            listarBrasilActivity.setList(list);
 
         } else {
             for (int j = 0; j < listarCGActivity.getListaBase().size(); j++) {
