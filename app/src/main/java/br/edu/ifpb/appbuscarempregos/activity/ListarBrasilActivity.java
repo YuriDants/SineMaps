@@ -23,7 +23,7 @@ public class ListarBrasilActivity extends Activity {
         setContentView(R.layout.activity_listar_brasil);
 
         ListView listView = (ListView) findViewById(R.id.list);
-        HttpGetAsyncTask httpGetAsyncTask = new HttpGetAsyncTask(this);
+        HttpGetAsyncTask httpGetAsyncTask = new HttpGetAsyncTask();
 
         DetalharOnItemClickListener detalhar = new DetalharOnItemClickListener(this);
         listView.setOnItemClickListener(detalhar);

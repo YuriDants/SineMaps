@@ -25,10 +25,12 @@ public class ListarCGActivity extends Activity {
         ListView listView = (ListView) findViewById(R.id.list);
         HttpGetAsyncTask httpGetAsyncTask = new HttpGetAsyncTask();
 
+        String lat = getIntent().getStringExtra("lat");
+        String longi = getIntent().getStringExtra("long");
         listView.setOnItemClickListener(new DetalharOnItemClickListener(this));
 
         try {
-            List<Sine> list = httpGetAsyncTask.execute("http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/emprego/latitude/-7.242662/longitude/-35.9716057/raio/100").get();
+            List<Sine> list = httpGetAsyncTask.execute("http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/emprego/latitude/"+lat+"/longitude/"+longi+"/raio/100").get();
             adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
             listView.setAdapter(adapter);
         } catch (InterruptedException | ExecutionException e) {
