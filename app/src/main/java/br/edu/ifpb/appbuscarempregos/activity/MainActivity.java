@@ -3,13 +3,16 @@ package br.edu.ifpb.appbuscarempregos.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
+
+import java.io.Serializable;
 
 import br.edu.ifpb.appbuscarempregos.R;
 import br.edu.ifpb.appbuscarempregos.listeners.GpsOnClickListener;
 import br.edu.ifpb.appbuscarempregos.listeners.ListarBrasilOnClickListener;
 import br.edu.ifpb.appbuscarempregos.listeners.ListarCGOnClickListener;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity{
     private Button bBrasil;
     private Button bCG;
     private Button bGps;
@@ -26,6 +29,7 @@ public class MainActivity extends Activity {
         bBrasil.setOnClickListener(new ListarBrasilOnClickListener(this));
         bCG.setOnClickListener(new ListarCGOnClickListener(this));
         bGps.setOnClickListener(new GpsOnClickListener(this));
+
     }
 
     public Button getbBrasil() {
@@ -51,4 +55,5 @@ public class MainActivity extends Activity {
     public void setbGps(Button bGps) {
         this.bGps = bGps;
     }
+
 }

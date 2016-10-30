@@ -1,8 +1,11 @@
 package br.edu.ifpb.appbuscarempregos.asynctask;
 
+import android.app.Activity;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.AsyncTask;
 import android.util.JsonReader;
 import android.util.Log;
+import android.widget.ImageView;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +15,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.edu.ifpb.appbuscarempregos.R;
 import br.edu.ifpb.appbuscarempregos.Sine;
+import br.edu.ifpb.appbuscarempregos.activity.MainActivity;
 
 /**
  * Created by gabriel on 29/10/2016.
@@ -22,7 +27,6 @@ public class HttpGetAsyncTask extends AsyncTask<String, Void, List<Sine>> {
 
     @Override
     protected void onPreExecute() {
-
     }
 
     @Override

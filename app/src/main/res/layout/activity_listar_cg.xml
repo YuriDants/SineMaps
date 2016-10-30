@@ -8,13 +8,13 @@
     android:orientation="vertical">
 
     <TextView
-        android:text="Sines no raio de 100Km"
+        android:text="Sines no raio de 100Km \n em Campina Grande"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
         android:textSize="24sp"
         android:textStyle="normal|bold"
         android:textAlignment="center"
-        android:id="@+id/textView3" />
+        android:id="@+id/textView3"
+        android:layout_height="65dp" />
 
     <ListView
         android:layout_width="match_parent"

@@ -15,7 +15,7 @@ import br.edu.ifpb.appbuscarempregos.asynctask.HttpGetAsyncTask;
 import br.edu.ifpb.appbuscarempregos.listeners.DetalharOnItemClickListener;
 
 public class ListarCGActivity extends Activity {
-    private ArrayAdapter<Sine> adapter= null;
+    private ArrayAdapter<Sine> adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

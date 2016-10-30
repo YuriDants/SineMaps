@@ -10,11 +10,11 @@
     <TextView
         android:text="Sines do Brasil"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
         android:id="@+id/textView2"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:textStyle="normal|bold" />
+        android:textStyle="normal|bold"
+        android:layout_height="35dp" />
 
     <ListView
         android:layout_width="match_parent"

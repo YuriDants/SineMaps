@@ -29,7 +29,7 @@ public class ListarGpsActivity extends Activity {
 
         String lat = getIntent().getStringExtra("lat");
         String longi = (String) getIntent().getStringExtra("longi");
-        String url = "http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/emprego//latitude/" + lat + "/longitude/" + "longi" + "/raio/{raio}";
+        String url = "http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/emprego//latitude/" + lat + "/longitude/" + "longi" + "/raio/100";
 
         try {
             List<Sine> list = httpGetAsyncTask.execute(url).get();

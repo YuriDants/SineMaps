@@ -1,4 +1,4 @@
-package br.edu.ifpb.appbuscarempregos;
+package br.edu.ifpb.appbuscarempregos.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
 
+import br.edu.ifpb.appbuscarempregos.R;
 import br.edu.ifpb.appbuscarempregos.activity.MainActivity;
 
 /**
@@ -15,7 +16,7 @@ import br.edu.ifpb.appbuscarempregos.activity.MainActivity;
 
 public class SplashActivity extends Activity implements Runnable {
 
-    private static int splashTime= 2000;
+    private static int splashTime= 3000;
     private ImageView image;
 
     protected void onCreate(Bundle savedInstanceState){

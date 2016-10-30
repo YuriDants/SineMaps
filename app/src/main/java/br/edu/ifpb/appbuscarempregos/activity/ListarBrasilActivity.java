@@ -16,13 +16,14 @@ import br.edu.ifpb.appbuscarempregos.listeners.DetalharOnItemClickListener;
 
 public class ListarBrasilActivity extends Activity {
     private ArrayAdapter<Sine> adapter = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listar_brasil);
 
         ListView listView = (ListView) findViewById(R.id.list);
-        HttpGetAsyncTask httpGetAsyncTask = new HttpGetAsyncTask();
+        HttpGetAsyncTask httpGetAsyncTask = new HttpGetAsyncTask(this);
 
         DetalharOnItemClickListener detalhar = new DetalharOnItemClickListener(this);
         listView.setOnItemClickListener(detalhar);
