@@ -22,7 +22,7 @@
         android:inputType="textPersonName"
         android:ems="10"
         android:id="@+id/searchText"
-        android:text="Pesquisar..." />
+        android:hint="Pesquisar..." />
 
     <ListView
         android:layout_width="match_parent"

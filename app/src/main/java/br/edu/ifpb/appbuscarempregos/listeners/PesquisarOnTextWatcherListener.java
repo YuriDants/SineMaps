@@ -14,16 +14,16 @@ import br.edu.ifpb.appbuscarempregos.activity.ListarCGActivity;
  * Created by gabri on 30/10/2016.
  */
 
-public class PesquisarOnTextChangeListener implements TextWatcher {
+public class PesquisarOnTextWatcherListener implements TextWatcher {
 
     private ListarBrasilActivity listarBrasilActivity = null;
     private ListarCGActivity listarCGActivity = null;
 
-    public PesquisarOnTextChangeListener(ListarBrasilActivity listarBrasilActivity) {
+    public PesquisarOnTextWatcherListener(ListarBrasilActivity listarBrasilActivity) {
         this.listarBrasilActivity = listarBrasilActivity;
     }
 
-    public PesquisarOnTextChangeListener(ListarCGActivity listarCGActivity) {
+    public PesquisarOnTextWatcherListener(ListarCGActivity listarCGActivity) {
         this.listarCGActivity = listarCGActivity;
     }
 

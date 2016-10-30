@@ -2,14 +2,9 @@ package br.edu.ifpb.appbuscarempregos.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -18,7 +13,7 @@ import br.edu.ifpb.appbuscarempregos.R;
 import br.edu.ifpb.appbuscarempregos.Sine;
 import br.edu.ifpb.appbuscarempregos.asynctask.HttpGetAsyncTask;
 import br.edu.ifpb.appbuscarempregos.listeners.DetalharOnItemClickListener;
-import br.edu.ifpb.appbuscarempregos.listeners.PesquisarOnTextChangeListener;
+import br.edu.ifpb.appbuscarempregos.listeners.PesquisarOnTextWatcherListener;
 
 public class ListarCGActivity extends Activity {
     private ArrayAdapter<Sine> adapter = null;
@@ -34,7 +29,7 @@ public class ListarCGActivity extends Activity {
         HttpGetAsyncTask httpGetAsyncTask = new HttpGetAsyncTask();
 
         EditText searchText = (EditText) findViewById(R.id.SearchText);
-        searchText.addTextChangedListener(new PesquisarOnTextChangeListener(this));
+        searchText.addTextChangedListener(new PesquisarOnTextWatcherListener(this));
 
         list.setOnItemClickListener(new DetalharOnItemClickListener(this));
 

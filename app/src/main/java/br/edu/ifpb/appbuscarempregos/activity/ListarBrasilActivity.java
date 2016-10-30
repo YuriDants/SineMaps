@@ -6,7 +6,6 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -14,7 +13,7 @@ import br.edu.ifpb.appbuscarempregos.R;
 import br.edu.ifpb.appbuscarempregos.Sine;
 import br.edu.ifpb.appbuscarempregos.asynctask.HttpGetAsyncTask;
 import br.edu.ifpb.appbuscarempregos.listeners.DetalharOnItemClickListener;
-import br.edu.ifpb.appbuscarempregos.listeners.PesquisarOnTextChangeListener;
+import br.edu.ifpb.appbuscarempregos.listeners.PesquisarOnTextWatcherListener;
 
 public class ListarBrasilActivity extends Activity {
     private ArrayAdapter<Sine> adapter = null;
@@ -30,10 +29,9 @@ public class ListarBrasilActivity extends Activity {
         HttpGetAsyncTask httpGetAsyncTask = new HttpGetAsyncTask();
 
         EditText searchText = (EditText) findViewById(R.id.SearchText);
-        searchText.addTextChangedListener(new PesquisarOnTextChangeListener(this));
+        searchText.addTextChangedListener(new PesquisarOnTextWatcherListener(this));
 
-        DetalharOnItemClickListener detalhar = new DetalharOnItemClickListener(this);
-        list.setOnItemClickListener(detalhar);
+        list.setOnItemClickListener(new DetalharOnItemClickListener(this));
 
         try {
             listaBase = httpGetAsyncTask.execute("http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/emprego?quantidade=10000").get();
@@ -41,7 +39,6 @@ public class ListarBrasilActivity extends Activity {
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
-
     }
 
     public ArrayAdapter<Sine> getAdapter() {
