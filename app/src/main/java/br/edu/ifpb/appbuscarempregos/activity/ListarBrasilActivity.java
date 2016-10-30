@@ -28,7 +28,7 @@ public class ListarBrasilActivity extends Activity {
         list = (ListView) findViewById(R.id.list);
         HttpGetAsyncTask httpGetAsyncTask = new HttpGetAsyncTask();
 
-        EditText searchText = (EditText) findViewById(R.id.SearchText);
+        EditText searchText = (EditText) findViewById(R.id.txt);
         searchText.addTextChangedListener(new PesquisarOnTextWatcherListener(this));
 
         list.setOnItemClickListener(new DetalharOnItemClickListener(this));
