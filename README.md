@@ -1,4 +1,4 @@
-# Aaplicação móvel que auxilia as pessoas na busca de emprego através do Sine.
+# A aplicação móvel que auxilia as pessoas na busca de emprego através do Sine.
 
 #### Data da entrega: 30/10 - Domingo ####
 #### Objetivos ####
