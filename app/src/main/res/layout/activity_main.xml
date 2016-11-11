@@ -35,10 +35,10 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:text="GPS"
+        android:text="GPS (não funciona)"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/button"
         android:layout_below="@+id/bCG"
-        android:layout_alignParentStart="true"
-        android:id="@+id/button" />
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

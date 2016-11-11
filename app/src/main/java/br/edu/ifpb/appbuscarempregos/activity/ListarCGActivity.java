@@ -3,6 +3,7 @@ package br.edu.ifpb.appbuscarempregos.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -13,12 +14,14 @@ import br.edu.ifpb.appbuscarempregos.R;
 import br.edu.ifpb.appbuscarempregos.Sine;
 import br.edu.ifpb.appbuscarempregos.asynctask.HttpGetAsyncTask;
 import br.edu.ifpb.appbuscarempregos.listeners.DetalharOnItemClickListener;
+import br.edu.ifpb.appbuscarempregos.listeners.MapsOnClickListener;
 import br.edu.ifpb.appbuscarempregos.listeners.PesquisarOnTextWatcherListener;
 
 public class ListarCGActivity extends Activity {
     private ArrayAdapter<Sine> adapter = null;
     private List<Sine> listaBase;
     private ListView list;
+    private Button mapSines;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +36,11 @@ public class ListarCGActivity extends Activity {
 
         list.setOnItemClickListener(new DetalharOnItemClickListener(this));
 
+        mapSines = (Button) findViewById(R.id.mapSines);
+        mapSines.setOnClickListener(new MapsOnClickListener(this));
+
         try {
-            listaBase = httpGetAsyncTask.execute("http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/emprego/latitude/-7.242662/longitude/-35.9716057/raio/100").get();
+            listaBase = httpGetAsyncTask.execute("http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/emprego/latitude/-7.219204/longitude/-35.882901/raio/100").get();
             setList(listaBase);
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();

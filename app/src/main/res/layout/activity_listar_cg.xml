@@ -24,6 +24,12 @@
         android:id="@+id/SearchText"
         android:hint="Pesquisar..." />
 
+    <Button
+        android:text="Ver no mapa todos os sines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mapSines" />
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
