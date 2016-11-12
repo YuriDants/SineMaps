@@ -13,6 +13,7 @@ import java.util.concurrent.ExecutionException;
 import br.edu.ifpb.appbuscarempregos.R;
 import br.edu.ifpb.appbuscarempregos.Sine;
 import br.edu.ifpb.appbuscarempregos.asynctask.HttpGetAsyncTask;
+import br.edu.ifpb.appbuscarempregos.asynctask.HttpGetSineSimplesAsyncTask;
 import br.edu.ifpb.appbuscarempregos.listeners.DetalharOnItemClickListener;
 import br.edu.ifpb.appbuscarempregos.listeners.MapsOnClickListener;
 import br.edu.ifpb.appbuscarempregos.listeners.PesquisarOnTextWatcherListener;
@@ -29,7 +30,7 @@ public class ListarCGActivity extends Activity {
         setContentView(R.layout.activity_listar_cg);
 
         list = (ListView) findViewById(R.id.list);
-        HttpGetAsyncTask httpGetAsyncTask = new HttpGetAsyncTask();
+        HttpGetSineSimplesAsyncTask httpGetAsyncTask = new HttpGetSineSimplesAsyncTask();
 
         EditText searchText = (EditText) findViewById(R.id.SearchText);
         searchText.addTextChangedListener(new PesquisarOnTextWatcherListener(this));
