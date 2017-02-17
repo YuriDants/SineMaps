@@ -17,10 +17,10 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        bBrasil = (Button) findViewById(R.id.bBrasil);
+        //bBrasil = (Button) findViewById(R.id.bBrasil);
         bCG = (Button) findViewById(R.id.bCG);
 
-        bBrasil.setOnClickListener(new ListarBrasilOnClickListener(this));
+        //bBrasil.setOnClickListener(new ListarBrasilOnClickListener(this));
         bCG.setOnClickListener(new ListarCGOnClickListener(this));
     }
 }
