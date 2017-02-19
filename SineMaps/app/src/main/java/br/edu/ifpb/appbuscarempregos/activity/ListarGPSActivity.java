@@ -24,6 +24,7 @@ import java.util.concurrent.ExecutionException;
 
 import br.edu.ifpb.appbuscarempregos.R;
 import br.edu.ifpb.appbuscarempregos.Sine;
+import br.edu.ifpb.appbuscarempregos.asynctask.HttpGetAsyncTask;
 import br.edu.ifpb.appbuscarempregos.asynctask.HttpGetSineSimplesAsyncTask;
 import br.edu.ifpb.appbuscarempregos.listeners.DetalharOnItemClickListener;
 import br.edu.ifpb.appbuscarempregos.listeners.MapsOnClickListener;
@@ -41,7 +42,7 @@ public class ListarGPSActivity extends Activity implements LocationListener {
 
     private final int REQUEST_LOCATION = 200;
 
-    private HttpGetSineSimplesAsyncTask httpGetAsyncTask;
+    private HttpGetAsyncTask httpGetAsyncTask;
 
     private String latitude;
     private String longitude;
@@ -52,7 +53,7 @@ public class ListarGPSActivity extends Activity implements LocationListener {
         setContentView(R.layout.activity_listar_cg);
 
         list = (ListView) findViewById(R.id.list);
-        httpGetAsyncTask = new HttpGetSineSimplesAsyncTask();
+        httpGetAsyncTask = new HttpGetnAsyncTask();
 
         EditText searchText = (EditText) findViewById(R.id.SearchText);
         searchText.addTextChangedListener(new PesquisarOnTextWatcherListener(this));
