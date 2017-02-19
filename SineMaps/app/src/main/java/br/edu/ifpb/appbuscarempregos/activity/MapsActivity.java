@@ -20,6 +20,8 @@ import br.edu.ifpb.appbuscarempregos.Sine;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private String longitude;
+    private String latitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +31,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        Bundle extras = getIntent().getExtras();
+        longitude = extras.getString("longitude");
+        latitude = extras.getString("latitude");
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         List<Sine> sines = (ArrayList<Sine>) getIntent().getSerializableExtra("lista");
+
 
         LatLng CG = new LatLng(-7.219204, -35.882901);
         mMap.addMarker(new MarkerOptions().position(CG).title("Ponto de referência"));
