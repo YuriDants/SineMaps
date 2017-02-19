@@ -38,6 +38,7 @@ public class MapsOnClickListener implements View.OnClickListener {
             Intent intent = new Intent(listarGPSActivity, MapsActivity.class);
             intent.putExtra("lista", (ArrayList<Sine>) listarGPSActivity.getListaBase());
             listarGPSActivity.startActivity(intent);
+            
         }
     }
 }
