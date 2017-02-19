@@ -3,6 +3,7 @@ package br.edu.ifpb.appbuscarempregos.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -13,6 +14,7 @@ import br.edu.ifpb.appbuscarempregos.R;
 import br.edu.ifpb.appbuscarempregos.Sine;
 import br.edu.ifpb.appbuscarempregos.asynctask.HttpGetAsyncTask;
 import br.edu.ifpb.appbuscarempregos.listeners.DetalharOnItemClickListener;
+import br.edu.ifpb.appbuscarempregos.listeners.MapsOnClickListener;
 import br.edu.ifpb.appbuscarempregos.listeners.PesquisarOnTextWatcherListener;
 
 public class ListarBrasilActivity extends Activity {

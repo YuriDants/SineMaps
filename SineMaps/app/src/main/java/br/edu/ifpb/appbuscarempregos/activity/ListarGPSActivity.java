@@ -33,15 +33,13 @@ public class ListarGPSActivity extends Activity implements LocationListener {
     private ArrayAdapter<Sine> adapter = null;
     private List<Sine> listaBase;
     private ListView list;
+
     private Button mapSines;
 
-    // Location
     private LocationManager locationManager;
     private Location location;
 
-    // Configuração
     private final int REQUEST_LOCATION = 200;
-    private static final String TAG = "MainActivity";
 
     private HttpGetSineSimplesAsyncTask httpGetAsyncTask;
 
@@ -142,11 +140,7 @@ public class ListarGPSActivity extends Activity implements LocationListener {
         latitude = String.valueOf(location.getLatitude());
         longitude = String.valueOf(location.getLongitude());
 
-        //verificação
-        Log.i("onLocationChanged lat", latitude);
-        Log.i("onLocationChanged long", longitude);
-
-        buscar(latitude, longitude);
+        //buscar(latitude, longitude);
     }
 
     @Override
