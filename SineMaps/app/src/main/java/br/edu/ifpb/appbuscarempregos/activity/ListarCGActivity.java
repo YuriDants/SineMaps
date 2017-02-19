@@ -41,7 +41,8 @@ public class ListarCGActivity extends Activity {
         mapSines.setOnClickListener(new MapsOnClickListener(this));
 
         try {
-            listaBase = httpGetAsyncTask.execute("http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/emprego/latitude/-7.219204/longitude/-35.882901/raio/100").get();
+            listaBase = httpGetAsyncTask.execute("http://mobile-aceite.tcu.gov.br/mapa-da-saude/rest/emprego/latitude/" + getIntent().getStringExtra("lat") +
+                    "/longitude/" + getIntent().getStringExtra("long") + "/raio/100").get();
             setList(listaBase);
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();

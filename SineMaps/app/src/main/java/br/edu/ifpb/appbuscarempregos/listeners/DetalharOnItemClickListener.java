@@ -16,6 +16,7 @@ import br.edu.ifpb.appbuscarempregos.Sine;
 import br.edu.ifpb.appbuscarempregos.activity.DetalharActivity;
 import br.edu.ifpb.appbuscarempregos.activity.ListarBrasilActivity;
 import br.edu.ifpb.appbuscarempregos.activity.ListarCGActivity;
+import br.edu.ifpb.appbuscarempregos.activity.ListarGPSActivity;
 import br.edu.ifpb.appbuscarempregos.asynctask.HttpGetAsyncTask;
 
 /**
@@ -25,6 +26,7 @@ import br.edu.ifpb.appbuscarempregos.asynctask.HttpGetAsyncTask;
 public class DetalharOnItemClickListener implements AdapterView.OnItemClickListener {
     private ListarCGActivity listarCGActivity = null;
     private ListarBrasilActivity listarBrasilActivity = null;
+    private ListarGPSActivity listarGPSActivity = null;
 
     public DetalharOnItemClickListener(ListarCGActivity activity) {
         this.listarCGActivity = activity;
@@ -32,6 +34,10 @@ public class DetalharOnItemClickListener implements AdapterView.OnItemClickListe
 
     public DetalharOnItemClickListener(ListarBrasilActivity activity) {
         this.listarBrasilActivity = activity;
+    }
+
+    public DetalharOnItemClickListener(ListarGPSActivity activity) {
+        this.listarGPSActivity = activity;
     }
 
     @Override
@@ -46,16 +52,26 @@ public class DetalharOnItemClickListener implements AdapterView.OnItemClickListe
 
             listarBrasilActivity.startActivity(intent);
         } else {
-            ArrayAdapter adapter = listarCGActivity.getAdapter();
-            Sine sine = (Sine) adapter.getItem(i);
+            if (listarCGActivity != null) {
+                ArrayAdapter adapter = listarCGActivity.getAdapter();
+                Sine sine = (Sine) adapter.getItem(i);
 
-            Intent intent = new Intent(listarCGActivity, DetalharActivity.class);
-            intent.putExtra("sine", sine);
+                Intent intent = new Intent(listarCGActivity, DetalharActivity.class);
+                intent.putExtra("sine", sine);
 
-            listarCGActivity.startActivity(intent);
+                listarCGActivity.startActivity(intent);
+            } else {
+                if (listarCGActivity != null) {
+                    ArrayAdapter adapter = listarGPSActivity.getAdapter();
+                    Sine sine = (Sine) adapter.getItem(i);
+
+                    Intent intent = new Intent(listarGPSActivity, DetalharActivity.class);
+                    intent.putExtra("sine", sine);
+
+                    listarGPSActivity.startActivity(intent);
+                }
+            }
         }
 
-
     }
-
 }

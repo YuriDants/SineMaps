@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import br.edu.ifpb.appbuscarempregos.Sine;
 import br.edu.ifpb.appbuscarempregos.activity.ListarCGActivity;
+import br.edu.ifpb.appbuscarempregos.activity.ListarGPSActivity;
 import br.edu.ifpb.appbuscarempregos.activity.MainActivity;
 import br.edu.ifpb.appbuscarempregos.activity.MapsActivity;
 
@@ -16,16 +17,27 @@ import br.edu.ifpb.appbuscarempregos.activity.MapsActivity;
  */
 
 public class MapsOnClickListener implements View.OnClickListener {
-    private ListarCGActivity main;
+    private ListarCGActivity listarCGActivity = null;
+    private ListarGPSActivity listarGPSActivity = null;
 
     public MapsOnClickListener(ListarCGActivity main) {
-        this.main = main;
+        this.listarCGActivity = main;
+    }
+
+    public MapsOnClickListener(ListarGPSActivity main) {
+        this.listarGPSActivity = main;
     }
 
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(main, MapsActivity.class);
-        intent.putExtra("lista", (ArrayList<Sine>) main.getListaBase());
-        main.startActivity(intent);
+        if (listarCGActivity != null) {
+            Intent intent = new Intent(listarCGActivity, MapsActivity.class);
+            intent.putExtra("lista", (ArrayList<Sine>) listarCGActivity.getListaBase());
+            listarCGActivity.startActivity(intent);
+        } else {
+            Intent intent = new Intent(listarGPSActivity, MapsActivity.class);
+            intent.putExtra("lista", (ArrayList<Sine>) listarGPSActivity.getListaBase());
+            listarGPSActivity.startActivity(intent);
+        }
     }
 }

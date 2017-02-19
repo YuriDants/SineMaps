@@ -20,6 +20,8 @@ public class ListarCGOnClickListener implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         Intent intent = new Intent(main, ListarCGActivity.class);
+        intent.putExtra("long", "-35.882901");
+        intent.putExtra("lat", "-7.219204");
         main.startActivity(intent);
     }
 }
