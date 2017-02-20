@@ -36,7 +36,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
         List<Sine> sines = (ArrayList<Sine>) getIntent().getSerializableExtra("lista");
 
-        LatLng CG = new LatLng(-7.219204, -35.882901);
+        LatLng CG = new LatLng(getIntent().getDoubleExtra("lat", -7.219204), getIntent().getDoubleExtra("long", -35.882901));
         mMap.addMarker(new MarkerOptions().position(CG).title("Ponto de referência"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(CG));
 

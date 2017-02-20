@@ -70,6 +70,14 @@ public class ListarGPSActivity extends Activity implements LocationListener {
         return adapter;
     }
 
+    public String getLatitude(){
+        return this.latitude;
+    }
+
+    public String getLongitude(){
+        return this.longitude;
+    }
+
     public void setAdapter(ArrayAdapter<Sine> adapter) {
         this.adapter = adapter;
     }

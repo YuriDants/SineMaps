@@ -39,12 +39,16 @@ public class MapsOnClickListener implements View.OnClickListener {
         if (listarCGActivity != null) {
             Intent intent = new Intent(listarCGActivity, MapsActivity.class);
             intent.putExtra("lista", (ArrayList<Sine>) listarCGActivity.getListaBase());
+            //intent.putExtra("lat", -7.219204);
+            //intent.putExtra("long", -35.882901);
             listarCGActivity.startActivity(intent);
 
         } else {
             if (listarGPSActivity != null){
                 Intent intent = new Intent(listarGPSActivity, MapsActivity.class);
                 intent.putExtra("lista", (ArrayList<Sine>) listarGPSActivity.getListaBase());
+                intent.putExtra("lat", Double.parseDouble(listarGPSActivity.getLatitude()));
+                intent.putExtra("long", Double.parseDouble(listarGPSActivity.getLongitude()));
                 listarGPSActivity.startActivity(intent);
 
             } else  {
