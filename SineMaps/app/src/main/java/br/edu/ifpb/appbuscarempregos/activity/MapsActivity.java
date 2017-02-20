@@ -1,5 +1,6 @@
 package br.edu.ifpb.appbuscarempregos.activity;
 
+import android.graphics.BitmapFactory;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +9,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -42,7 +44,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         for (int i = 0; i < sines.size(); i++) {
             LatLng ponto = new LatLng(Double.valueOf(sines.get(i).getLat()), Double.valueOf(sines.get(i).getLongi()));
-            mMap.addMarker(new MarkerOptions().position(ponto).title(sines.get(i).getNome()));
+            MarkerOptions options = new MarkerOptions()
+                    .position(ponto)
+                    .title("Nome: " + sines.get(i).getNome())
+                    .snippet("Telefone: " + sines.get(i).getTelefone())
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.icon_sine));
+            mMap.addMarker(options);
             mMap.setMinZoomPreference(8);
         }
     }
