@@ -39,28 +39,28 @@ public class DetalharActivity extends Activity {
         setContentView(R.layout.activity_detalhar);
 
         txtNome = (TextView) findViewById(R.id.txtNome);
-        //txtendereco = (TextView) findViewById(R.id.txtendereco);
-        //txtEntidadeConveniada = (TextView) findViewById(R.id.txtEntidadeConveniada);
-        //txtCodPosto = (TextView) findViewById(R.id.txtCodPosto);
-        //txtBairro = (TextView) findViewById(R.id.txtBairro);
-        //txtCEP = (TextView) findViewById(R.id.txtCEP);
-        //txtTelefone = (TextView) findViewById(R.id.txtTelefone);
-        //txtMunicipio = (TextView) findViewById(R.id.txtMunicipio);
-        //txtUF = (TextView) findViewById(R.id.txtUF);
+        txtendereco = (TextView) findViewById(R.id.txtendereco);
+        txtEntidadeConveniada = (TextView) findViewById(R.id.txtEntidadeConveniada);
+        txtCodPosto = (TextView) findViewById(R.id.txtCodPosto);
+        txtBairro = (TextView) findViewById(R.id.txtBairro);
+        txtCEP = (TextView) findViewById(R.id.txtCEP);
+        txtTelefone = (TextView) findViewById(R.id.txtTelefone);
+        txtMunicipio = (TextView) findViewById(R.id.txtMunicipio);
+        txtUF = (TextView) findViewById(R.id.txtUF);
 
         mapButton = (Button) findViewById(R.id.mapButton);
 
         sine = (Sine) getIntent().getSerializableExtra("sine");
 
         txtNome.setText(sine.getNome());
-        //txtendereco.setText(sine.getEndereco());
-        //txtEntidadeConveniada.setText(sine.getEntidadeConveniada());
-        //txtCodPosto.setText(sine.getCodPosto());
-        //txtBairro.setText(sine.getBairro());
-        //txtCEP.setText(sine.getCep());
-        //txtTelefone.setText(sine.getTelefone());
-        //txtMunicipio.setText(sine.getMunicipio());
-        //txtUF.setText(sine.getUf());
+        txtendereco.setText(sine.getEndereco());
+        txtEntidadeConveniada.setText(sine.getEntidadeConveniada());
+        txtCodPosto.setText(sine.getCodPosto());
+        txtBairro.setText(sine.getBairro());
+        txtCEP.setText(sine.getCep());
+        txtTelefone.setText(sine.getTelefone());
+        txtMunicipio.setText(sine.getMunicipio());
+        txtUF.setText(sine.getUf());
 
         mapButton.setOnClickListener(new MapaOnClickListener(this));
     }

@@ -61,7 +61,6 @@ public class DetalharOnItemClickListener implements AdapterView.OnItemClickListe
 
                 listarCGActivity.startActivity(intent);
             } else {
-                if (listarCGActivity != null) {
                     ArrayAdapter adapter = listarGPSActivity.getAdapter();
                     Sine sine = (Sine) adapter.getItem(i);
 
@@ -70,7 +69,6 @@ public class DetalharOnItemClickListener implements AdapterView.OnItemClickListe
 
                     listarGPSActivity.startActivity(intent);
                 }
-            }
         }
 
     }

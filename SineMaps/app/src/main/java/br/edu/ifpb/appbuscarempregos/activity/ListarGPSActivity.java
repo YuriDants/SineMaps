@@ -53,7 +53,7 @@ public class ListarGPSActivity extends Activity implements LocationListener {
         setContentView(R.layout.activity_listar_cg);
 
         list = (ListView) findViewById(R.id.list);
-        httpGetAsyncTask = new HttpGetnAsyncTask();
+        httpGetAsyncTask = new HttpGetAsyncTask();
 
         EditText searchText = (EditText) findViewById(R.id.SearchText);
         searchText.addTextChangedListener(new PesquisarOnTextWatcherListener(this));
